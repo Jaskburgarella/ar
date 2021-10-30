@@ -30,7 +30,7 @@ function mia_posizione(position) {
   //var lat = position.coords.latitude;
   //var lon = position.coords.longitude;
  // document.getElementById('posizione').innerHTML = 'La tua posizione: ' + lat + ',' + lon;  
-alert(lat);
+
 
 }
 
@@ -51,7 +51,7 @@ geocoder.geocode( { 'address': address, 'region': 'uk' }, function(results, stat
      storeResult(result);
     });
 }
-
+//longitude: 38.04299; latitude: 12.56183;
 </script>
 
 
@@ -61,7 +61,7 @@ geocoder.geocode( { 'address': address, 'region': 'uk' }, function(results, stat
 		embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 		
-<a-entity gltf-model="./uwp3_0.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: 38.04299; latitude: 12.56183;" animation-mixer/>		
+<a-entity gltf-model="./uwp3_0.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude:"+lon+"; latitude:"+lat+";" animation-mixer/>		
 		
 		
         
