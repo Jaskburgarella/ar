@@ -13,6 +13,49 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
+<script>
+
+var lat,lon;
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(mia_posizione);
+}else{
+  alert('La geo-localizzazione NON è possibile');
+}
+
+function mia_posizione(position) {
+  lat = position.coords.latitude; // diciaro globalmente
+  lon = position.coords.longitude;  
+  
+  //var lat = position.coords.latitude;
+  //var lon = position.coords.longitude;
+ // document.getElementById('posizione').innerHTML = 'La tua posizione: ' + lat + ',' + lon;  
+alert(lat);
+
+}
+
+
+
+
+
+function getLatLong(address) {
+var geocoder = new google.maps.Geocoder();
+var result = "";
+geocoder.geocode( { 'address': address, 'region': 'uk' }, function(results, status) {
+     if (status == google.maps.GeocoderStatus.OK) {
+         result[lat] = results[0].geometry.location.Pa;
+         result[lng] = results[0].geometry.location.Qa;
+     } else {
+         result = "Unable to find address: " + status;
+     }
+     storeResult(result);
+    });
+}
+
+</script>
+
+
+
     <a-scene
         vr-mode-ui="enabled: false"
 		embedded
