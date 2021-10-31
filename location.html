@@ -55,6 +55,9 @@ geocoder.geocode( { 'address': address, 'region': 'uk' }, function(results, stat
 
 gps-entity-place="longitude:; latitude:"
 
+entity.setAttribute('position', { x: 1, y: 2, z: 3 });
+
+
 */
 
 </script>
@@ -65,10 +68,11 @@ gps-entity-place="longitude:; latitude:"
         vr-mode-ui="enabled: false"
 		embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-<a-entity gltf-model="url(https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/Duck/glTF/Duck.gltf)" position="0 0 -5"></a-entity>		
-<a-entity gltf-model="./uwp3_0.gltf" position="50 50 0" rotation="0 270 -90" scale="0.03 0.03 0.03"  animation-mixer/>		
 		
-
+<a-entity id="3d" gltf-model="./uwp3_0.gltf" position="0 0 0" rotation="0 270 -90" scale="0.03 0.03 0.03"  animation-mixer/>		
+<script>
+document.getElementById("3d").setAttribute('position', { x: 1, y: 2, z: 3 });		
+</script>
         
         <a-camera gps-camera rotation-reader></a-camera>
 	</a-scene>
