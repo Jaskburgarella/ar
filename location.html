@@ -8,9 +8,9 @@
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 	
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!--  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-  
+  -->
 
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
@@ -76,7 +76,7 @@ rotation="270 0 -90"
 		embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 		
-    <a-entity id="3d" gltf-model="./uwp3_0.gltf" look-at="[gps-camera]" Position="10 5 -2" rotation="270 0 -90" animation-mixer /> 		
+    <a-entity id="3d" gltf-model="./uwp3_0.gltf" Position="10 5 -2" rotation="270 0 -90" animation-mixer /> 		
 
         
         <a-camera gps-camera rotation-reader>
