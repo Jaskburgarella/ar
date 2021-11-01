@@ -64,7 +64,7 @@ entity.setAttribute('position', { x: 1, y: 2, z: 3 });
  Position="10 5 -2"
 rotation="270 0 -90"
 look-at="[gps-camera]" 
-
+rotation="270 0 -90" Position="1 0.5 -0.2" scale="0.15 0.15 0.15"
 */
 
 </script>
@@ -76,10 +76,11 @@ look-at="[gps-camera]"
 		embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 		
-    <a-entity id="3d" gltf-model="./uwp3_0.gltf" rotation="270 0 -90" position="1 0.5 -0.2" scale="0.15 0.15 0.15"  animation-mixer /> 		
+    <a-entity id="3d" gltf-model="./uwp3_0.gltf" animation-mixer /> 		
 
         
-        <a-camera gps-camera rotation-reader></a-camera>
+        <a-camera gps-camera rotation-reader>
+		 </a-camera>
 	</a-scene>
 </body>
 		
