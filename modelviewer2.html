@@ -8,16 +8,25 @@
 <!-- Import the component -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+     <!-- REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
+
+      <!--    💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script> 
+
+     <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+     <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script> 
 </head>
 
 <body>
 <!-- Use it like any other HTML element -->
-    <model-viewer src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948"
+    <model-viewer style="width:800px; height:400px;"src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948"
                   ios-src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878"
                   poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
                   alt="A 3D model of an astronaut"
                   shadow-intensity="1"
                   camera-controls
+				  skybox-image="./hdrsky/HDR_029_Sky_Cloudy_Env.hdr"
 				  ar ar-modes="webxr scene-viewer quick-look" 
                   auto-rotate ar>
     </model-viewer>
