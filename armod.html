@@ -46,7 +46,7 @@
 	  
 	  <a-entity
 	    id="oggetto1"
-	    visible="true"
+	    visible="false"
         gltf-model="https://jaskburgarella.github.io/ar/scene.gltf"
         scale="3 3 3"
 	    position="80 20 -40"
@@ -60,6 +60,7 @@
   </a-scene>
   
   <script>
+  setTimeout(function(){alert('ciao');},1000);
   setTimeout(function(){document.getElementById('oggetto1').visible=true; alert('oggettovisibile')},20000);
   </script>
   
