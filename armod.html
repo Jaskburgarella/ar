@@ -27,6 +27,22 @@
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
+  
+<script> 
+  AFRAME.registerComponent('log', {
+  schema: {type: 'string'},
+
+  init: function () {
+    //var stringToLog = this.data;
+    console.log(this.el);
+	 this.el.setAttribute('visible',false); 
+     
+  
+  }
+});
+  
+</script>  
+  
   <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
@@ -45,8 +61,8 @@
 	  
 	  
 	  <a-entity
-	    id="oggetto1"
-	    visible="false"
+	    log="estrai"
+		visible=""
         gltf-model="https://jaskburgarella.github.io/ar/scene.gltf"
         scale="3 3 3"
 	    position="80 20 -40"
@@ -60,8 +76,8 @@
   </a-scene>
   
   <script>
-  setTimeout(function(){alert('ciao');},1000);
-  setTimeout(function(){document.getElementById('oggetto1').visible=true; alert('oggettovisibile')},20000);
+   setTimeout(function(){alert('c');},1000);
+  //setTimeout(function(){alert('oggettovisibile')},20000);
   </script>
   
   
