@@ -1,7 +1,7 @@
 <html>
 <head>
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="./aframe-min.js"></script>
+<script src="./aframe-ar-nft.js"></script>
 
 <style>
   .arjs-loader {
@@ -36,14 +36,21 @@
 var h;
 
 
-  AFRAME.registerComponent('log', {
+  AFRAME.registerComponent('vis', {
   schema: {type: 'string'},
 
   init: function () {
     //var stringToLog = this.data;
-    console.log(this.el);
+    //console.log(this.el);
+	 var ext=(Date.now()%2);
+	 if (ext==1){
+	 alert(ext);
 	 this.el.setAttribute('visible',true); 
-     
+              }else
+			  {
+             alert(ext);			  
+			  this.el.setAttribute('visible',false); 
+			  }
   
   },
   
@@ -60,7 +67,7 @@ var h;
 
 
 
-
+/*
 
 
  AFRAME.registerComponent('vs', {
@@ -90,7 +97,7 @@ document.body.innerHTML +=""+
   
   
 });
-
+*/
 
   
 </script>  
@@ -100,7 +107,6 @@ document.body.innerHTML +=""+
  
  
    <a-scene
-    vs="true"
 	vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
@@ -118,7 +124,7 @@ document.body.innerHTML +=""+
 	  
 	  
 	  <a-entity
-	    log="estrai"
+	    vis="decidi"
 		visible=""
         gltf-model="https://jaskburgarella.github.io/ar/scene.gltf"
         scale="3 3 3"
