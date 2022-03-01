@@ -172,12 +172,12 @@ document.body.innerHTML +=""+
       <a-text
         value="This content will always face you."
         look-at="[gps-camera]"
-        scale="120 120 120"
+        scale="1 1 1"
         gps-entity-place="latitude: 38.0168; longitude: 12.54789;"
       ></a-text>   
    
    
-   <a-entity gps-camera rotation-reader></a-entity> 
+   <a-entity gps-camera simulateLatitude="38.0168" simulateLangitude="12.54789" rotation-reader></a-entity> 
   </a-scene> 
   
 
