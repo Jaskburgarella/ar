@@ -37,8 +37,8 @@
   </div>
   
 <script> 
-var h;
-
+var h,visibilita;
+visibilita=false;
 
   AFRAME.registerComponent('vis', {
   schema: {type: 'string'},
@@ -57,7 +57,8 @@ var h;
     //console.log(this.el);
 	 var ext=(Date.now()%2);
 	 if (ext==1){
-	 alert(ext);
+	 //alert(ext);
+	 visibilita=true;
 	 this.el.setAttribute('visible',true); 
 	/*  var iw=window.innerWidth;
 	  var ih=window.innerHeight;
@@ -71,7 +72,8 @@ var h;
 	 
               }else
 			  {
-             alert(ext);			  
+             alert('Mi dispiace, Ritenta un altra volta');
+             visibilita=false;			 
 			  this.el.setAttribute('visible',false); 
 			  
 /*	  var iw=window.innerWidth;
@@ -223,9 +225,31 @@ sceneEl.appendChild(btn);
 	"    rotation=\"270 -270 -90\">"+
 "  </a-entity></a-nft><a-entity camera></a-entity></a-scene>";  
 */  
+
+function generamodulo()
+{
+if (visibilita=true){
+	  var iw=window.innerWidth;
+	  var ih=window.innerHeight;
+	  var t=ih-100;
+
+	 document.body.innerHTML +=""+
+    "<div id=\"pannello\" style=\"position:absolute; top:"+t+"px;left:1px;width:300px;height:80px;background-color:white;color:black;z-index:1;\">"+
+    "<div>Prenotazione Taglio con sconto </div></div>";
+
+
+}
+
+
+
+}
+
+
+
+
   
   
-  
+window.addEventListener('touchend',generamodulo,false); 
   
   
   
