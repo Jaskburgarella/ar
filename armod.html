@@ -110,8 +110,8 @@ var p;
   },
 
   report: function (){
-  lan=this.el;
-  alert(lan.components['gps-entity-place'].attrValue['latitude']);
+ // lan=this.el;
+ // alert(lan.components['gps-entity-place'].attrValue['latitude']);
   
   
   }
@@ -311,7 +311,7 @@ sceneEl.appendChild(btn);
 document.querySelector('[dimmipos]').components.dimmipos.report(); // valida anche la seconda dichiarazione 
 
 p.then((success)=>{
-//alert(visibilita);
+alert(visibilita);
 if (visibilita==0){
  setTimeout(function(){alert('Mi dispiace, Ritenta un altra volta');},20000);
 }
