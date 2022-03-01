@@ -168,7 +168,16 @@ document.body.innerHTML +=""+
    
 
    </a-nft>
-   <a-entity camera></a-entity> 
+   
+      <a-text
+        value="This content will always face you."
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        gps-entity-place="latitude: 38.0168; longitude: 12.54789;"
+      ></a-text>   
+   
+   
+   <a-entity gps-camera rotation-reader></a-entity> 
   </a-scene> 
   
 
