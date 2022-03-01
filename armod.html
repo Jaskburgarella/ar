@@ -4,6 +4,11 @@
 <script src="./aframe-ar-nft.js"></script>
 
 <style>
+@font-face {
+  font-family:Roboto-Regular;
+  src: url(font/roboto/Roboto-Regular.ttf);
+}
+
   .arjs-loader {
     height: 100%;
     width: 100%;
@@ -19,9 +24,14 @@
 
   .arjs-loader div {
     text-align: center;
-    font-size: 1.25em;
+    font-size: 24px;
     color: white;
   }
+  
+  
+  
+  
+  
 </style>
 
 </head>
@@ -33,12 +43,13 @@
 
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
-    <div>Loading, please wait...</div>
+    <div>Vediamo se spunta il fungo magico...</div>
   </div>
   
 <script> 
 var h,visibilita;
-visibilita=false;
+visibilita=3; // stato iniziale
+var p;
 
   AFRAME.registerComponent('vis', {
   schema: {type: 'string'},
@@ -51,48 +62,35 @@ visibilita=false;
   
   valutazione: function(){
   
-  
-  
+    
+     p=new Promise((resolve,reject)=>{
+	
     //var stringToLog = this.data;
     //console.log(this.el);
 	 var ext=(Date.now()%2);
+	 //alert(ext);
 	 if (ext==1){
 	 //alert(ext);
-	 visibilita=true;
+	 visibilita=1;
 	 this.el.setAttribute('visible',true); 
-	/*  var iw=window.innerWidth;
-	  var ih=window.innerHeight;
-	  var t=ih-100;
-
-	 document.body.innerHTML +=""+
-    "<div id=\"pannello\" style=\"position:absolute; top:"+t+"px;left:1px;width:300px;height:80px;background-color:white;color:black;z-index:1;\">"+
-    "<div>Congratulazioni, sconto Taglio </div></div>";
-	
-	 */
+     resolve(1);
 	 
               }else
 			  {
-           setTimeout(function(){alert('Mi dispiace, Ritenta un altra volta');},15000);
+          
           
             
-    			visibilita=false;			 
+    			visibilita=0;			 
 			  this.el.setAttribute('visible',false); 
-			  
-/*	  var iw=window.innerWidth;
-	  var ih=window.innerHeight;
-	  var t=ih-100;
-
-	 document.body.innerHTML +=""+
-    "<div id=\"pannello\" style=\"position:absolute; top:"+t+"px;left:1px;width:300px;height:80px;background-color:white;color:black;z-index:1;\">"+
-    "<div>ritenta </div></div>";			  
-	*/		 
+			  resolve(1);
+	 
 			  }
   
   
-  
+            });
 
   
-  }
+  } // fine funzione valutazione
   
   
   
@@ -184,24 +182,73 @@ document.querySelector('[vis]').components.vis.prova(); // valida anche la secon
   },4000);
 */
 
+
+/*
+
+// calcolare indirizzo ip.
+var rispostaottenuta;
+               $.ajax({
+                async: true,
+                type : "POST", // type of action POST || GET
+                contentType: 'text/plain',                            
+                url: 'http://.....php', // url where to submit the request
+                crossDomain: 'true',
+                dataType : 'text', // data type
+                data : "nome=Giacomo", // post data || get data
+                success : function(resp) {  
+   rispostaottenuta=resp;				
+                    // you can see the result from the console
+                    // tab of the developer tools
+              //token=resp.token;
+                console.log("risposta: "+resp);
+   				respg=resp;	// variabile globale cosi mi porto resp fuori che non so che tipo è e fuori da questa funzione la perderò(mi servirà per estrarre dati da json).	
+              //  json = JSON.stringify(resp);
+                },
+                error: function(resp){
+                     alert("json not found"); 
+                 }});
+
+*/
+
+function generamodulo()
+{
+
+if (visibilita==1){
+window.removeEventListener('click',generamodulo,false);
+      
+	  var iw=window.innerWidth;
+	  var ih=window.innerHeight;
+	  var t=ih-100;
+
+	 document.body.innerHTML +=""+
+    "<div id=\"pannello\" style=\"position:absolute; top:"+t+"px;left:1px;font-family:Roboto-Regular;font-size:16px;width:500px;height:80px;background-color:#5f69f0;border:1px solid yellow; border-radius:5px;color:white;z-index:1;\">"+
+    "<center><div>Complimenti!!!!  registra adesso il tuo sconto</div>"+
+	"<table><tr><td><div>Inserisci il tuo codice fiscale:</div>"+
+	"</td><td><div><input type=\"text\" value=\"\" style=\"width:150px;\"></input></div></td></tr></table>"+
+	 "</center></div>";
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
 document.querySelector('[vis]').components.vis.valutazione(); // valida anche la seconda dichiarazione 
-</script>  
-  
-  
-
-
-
-
-
- <script>  
+ 
 /*  setTimeout(function(){
 document.querySelector('[vs]').components.vs.abortscena(); // valida anche la seconda dichiarazione 
   },7000);
 */
-</script> 
 
- 
-<script>
 /*var sceneEl = document.querySelector('a-scene');
 var btn =document.createElement("button");
 btn.innerHTML = "Hello Button";
@@ -209,10 +256,7 @@ btn.innerHTML = "Hello Button";
 // Do `.setAttribute()`s to initialize the entity.
 sceneEl.appendChild(btn);
 */
-</script>
 
- 
-  <script>
   // setTimeout(function(){alert('c1');},1000);
   //setTimeout(function(){alert('oggettovisibile')},20000);
 
@@ -228,23 +272,21 @@ sceneEl.appendChild(btn);
 "  </a-entity></a-nft><a-entity camera></a-entity></a-scene>";  
 */  
 
-function generamodulo()
-{
-if (visibilita=true){
-	  var iw=window.innerWidth;
-	  var ih=window.innerHeight;
-	  var t=ih-100;
-
-	 document.body.innerHTML +=""+
-    "<div id=\"pannello\" style=\"position:absolute; top:"+t+"px;left:1px;width:300px;height:80px;background-color:white;color:black;z-index:1;\">"+
-    "<div>Prenotazione Taglio con sconto </div></div>";
 
 
+
+
+p.then((success)=>{
+alert(visibilita);
+if (visibilita==0){
+ setTimeout(function(){alert('Mi dispiace, Ritenta un altra volta');},10000);
 }
 
 
 
-}
+
+
+
 
 
 
@@ -252,9 +294,9 @@ if (visibilita=true){
   
   
 window.addEventListener('touchend',generamodulo,false); 
+window.addEventListener('click',generamodulo,false);   
   
-  
-  
+ }); 
   
 
 
