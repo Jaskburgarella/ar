@@ -47,7 +47,7 @@
   </div>
   
 <script> 
-var h,visibilita;
+var h,visibilita,lan;
 visibilita=3; // stato iniziale
 var p;
 
@@ -95,6 +95,29 @@ var p;
   
   
 });
+
+
+
+
+
+ AFRAME.registerComponent('dimmipos', {
+  schema: {type: 'string'},
+
+  init: function () {
+  
+
+  
+  },
+
+  report: function (){
+  lan=this.el;
+  alert(lan.components['gps-entity-place'].attrValue['latitude']);
+  
+  
+  }
+
+});
+
 
 
 
@@ -170,14 +193,16 @@ document.body.innerHTML +=""+
    </a-nft>
    
  
-     <a-box material="color: yellow"
+     <a-box 
+	    
+	    material="color: yellow"
         gps-entity-place="latitude: 38.0168; longitude: 12.54789"
-		position="0 30 0"
+		position="-1 0.5 -3"
       />
      	  
    
    
-   <a-entity gps-camera simulateLatitude="38.0168" simulateLangitude="12.54789" rotation-reader></a-entity> 
+   <a-entity dimmipos="" gps-camera rotation-reader></a-entity> 
   </a-scene> 
   
 
@@ -283,7 +308,7 @@ sceneEl.appendChild(btn);
 
 
 
-
+document.querySelector('[dimmipos]').components.dimmipos.report(); // valida anche la seconda dichiarazione 
 
 p.then((success)=>{
 //alert(visibilita);
