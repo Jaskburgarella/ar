@@ -72,8 +72,10 @@ visibilita=false;
 	 
               }else
 			  {
-             alert('Mi dispiace, Ritenta un altra volta');
-             visibilita=false;			 
+           setTimeout(function(){alert('Mi dispiace, Ritenta un altra volta');},15000);
+          
+            
+    			visibilita=false;			 
 			  this.el.setAttribute('visible',false); 
 			  
 /*	  var iw=window.innerWidth;
