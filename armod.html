@@ -169,12 +169,12 @@ document.body.innerHTML +=""+
 
    </a-nft>
    
-      <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="1 1 1"
-        gps-entity-place="latitude: 38.0168; longitude: 12.54789;"
-      ></a-text>   
+ 
+     <a-box material="color: yellow"
+        gps-entity-place="latitude: 38.0168; longitude: 12.54789"
+		position="0 30 0"
+      />
+     	  
    
    
    <a-entity gps-camera simulateLatitude="38.0168" simulateLangitude="12.54789" rotation-reader></a-entity> 
